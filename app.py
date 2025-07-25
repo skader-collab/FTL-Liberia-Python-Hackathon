@@ -1,14 +1,11 @@
 import streamlit as st
 import pandas as pd
-import pickle
+import joblib
 
 # --- Load Model ---
 @st.cache_resource
 def load_model():
-    with open("best_healthcare_model.joblib", "rb") as f:
-        return joblib.load("best_healthcare_model.joblib")
-
-model = load_model()
+    return joblib.load("best_healthcare_model.joblib")
 
 # --- App Title & Description ---
 st.set_page_config(page_title="Healthcare Shortfall Predictor", layout="wide")
