@@ -3,9 +3,14 @@ import pandas as pd
 import joblib
 
 # --- Load Model ---
+import joblib
+
 @st.cache_resource
 def load_model():
     return joblib.load("best_healthcare_model.joblib")
+
+model = load_model()
+
 
 # --- App Title & Description ---
 st.set_page_config(page_title="Healthcare Shortfall Predictor", layout="wide")
