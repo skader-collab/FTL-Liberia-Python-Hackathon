@@ -6,7 +6,7 @@ import pickle
 @st.cache_resource
 def load_model():
     with open("best_healthcare_model.joblib", "rb") as f:
-        return pickle.load(f)
+        return joblib.load("best_healthcare_model.joblib")
 
 model = load_model()
 
@@ -55,7 +55,7 @@ input_data = pd.DataFrame({
 
 # --- Predict ---
 if st.sidebar.button("Predict Shortfall"):
-    prediction = model.predict(input_data)[0]
+    prediction = float(model.predict(input_data)[0])
     
     # Display Result
     st.subheader("Prediction Result")
