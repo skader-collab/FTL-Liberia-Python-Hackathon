@@ -5,7 +5,7 @@ import pickle
 # --- Load Model ---
 @st.cache_resource
 def load_model():
-    with open("lasso_best_model.pkl", "rb") as f:
+    with open("best_healthcare_model.joblib", "rb") as f:
         return pickle.load(f)
 
 model = load_model()
